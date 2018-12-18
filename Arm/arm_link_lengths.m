@@ -2,7 +2,7 @@
 %   i   theta   d    a    alpha
 %   1    q1     0    l1   0
 %   2    q2     0    l2   0
-%   3   -q3     0    l3   0
+%   3    q3     0    l3   0
 
 clc
 clear
