@@ -1,0 +1,2 @@
+kartorm:mrm_description
+-DCATKIN_DEVEL_PREFIX=/home/harshal/urc/urc_arm/urc_arm_ws/devel -DCMAKE_INSTALL_PREFIX=/home/harshal/urc/urc_arm/urc_arm_ws/install -G Unix Makefiles
