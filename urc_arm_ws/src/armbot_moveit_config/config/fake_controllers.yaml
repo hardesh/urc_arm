@@ -3,5 +3,4 @@ controller_list:
     joints:
       - hip
       - shoulder
-      - elbow
       - wrist

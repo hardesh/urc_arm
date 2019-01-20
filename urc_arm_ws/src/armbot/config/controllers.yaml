@@ -4,5 +4,3 @@ arm_controller:
     - hip
     - shoulder
     - wrist
-
-# removed elbow

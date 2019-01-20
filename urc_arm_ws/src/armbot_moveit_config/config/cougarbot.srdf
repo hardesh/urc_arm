@@ -13,15 +13,13 @@
         <joint name="fixed" />
         <joint name="hip" />
         <joint name="shoulder" />
-        <joint name="elbow" />
         <joint name="wrist" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper" parent_link="hand" group="arm" />
+    <end_effector name="hand" parent_link="hand" group="arm" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="base_link" link2="torso" reason="Adjacent" />
-    <disable_collisions link1="hand" link2="lower_arm" reason="Adjacent" />
-    <disable_collisions link1="hand" link2="upper_arm" reason="Never" />
-    <disable_collisions link1="lower_arm" link2="upper_arm" reason="Adjacent" />
+    <disable_collisions link1="hand" link2="torso" reason="Never" />
+    <disable_collisions link1="hand" link2="upper_arm" reason="Adjacent" />
     <disable_collisions link1="torso" link2="upper_arm" reason="Adjacent" />
 </robot>
