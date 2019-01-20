@@ -1,0 +1,8 @@
+prefix=/home/harshal/urc/urc_arm/urc_arm_ws/devel
+
+Name: armbot
+Description: Description of armbot
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/harshal/urc/urc_arm/urc_arm_ws/devel/lib 
+Requires: 

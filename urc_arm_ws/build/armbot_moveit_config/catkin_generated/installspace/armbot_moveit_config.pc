@@ -1,0 +1,8 @@
+prefix=/home/harshal/urc/urc_arm/urc_arm_ws/install
+
+Name: armbot_moveit_config
+Description: Description of armbot_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/harshal/urc/urc_arm/urc_arm_ws/install/lib 
+Requires: 

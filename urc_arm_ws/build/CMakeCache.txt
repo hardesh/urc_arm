@@ -265,6 +265,18 @@ actionlib_DIR:PATH=/opt/ros/kinetic/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/kinetic/share/actionlib_msgs/cmake
 
+//Value Computed by CMake
+armbot_BINARY_DIR:STATIC=/home/harshal/urc/urc_arm/urc_arm_ws/build/armbot
+
+//Value Computed by CMake
+armbot_SOURCE_DIR:STATIC=/home/harshal/urc/urc_arm/urc_arm_ws/src/armbot
+
+//Value Computed by CMake
+armbot_moveit_config_BINARY_DIR:STATIC=/home/harshal/urc/urc_arm/urc_arm_ws/build/armbot_moveit_config
+
+//Value Computed by CMake
+armbot_moveit_config_SOURCE_DIR:STATIC=/home/harshal/urc/urc_arm/urc_arm_ws/src/armbot_moveit_config
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 
@@ -557,7 +569,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

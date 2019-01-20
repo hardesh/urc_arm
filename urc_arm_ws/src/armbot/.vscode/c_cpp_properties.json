@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/harshal/rotorS_ws/devel/include",
+                "/home/harshal/learn_package/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/harshal/urc/urc_arm/urc_arm_ws/src/kartorm/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

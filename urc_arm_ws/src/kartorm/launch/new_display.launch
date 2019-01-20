@@ -1,0 +1,18 @@
+<!-- <?xml version="1.0"?> -->
+
+<launch>
+  <!-- Load the URDF model into the parameter server -->
+  <param name="robot_description" textfile="$(find kartorm)/urdf/arm.urdf"/>
+  <!-- Start Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+  <!-- Spawn a Bot in Gazebo, taking the description from the parameter server -->
+  <node name="spawn_arm" pkg="gazebo_ros" type="spawn_model" output="screen"
+                args="-urdf -param robot_description -model arm"/>
+
+  <rosparam file="$(find kartorm)/config/controllers.yaml" command="load"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+</launch>
