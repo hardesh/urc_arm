@@ -455,6 +455,24 @@ armbot_moveit_config/preinstall:
 .PHONY : armbot_moveit_config/preinstall
 
 #=============================================================================
+# Directory level rules for directory Assem1
+
+# Convenience name for "all" pass in the directory.
+Assem1/all:
+
+.PHONY : Assem1/all
+
+# Convenience name for "clean" pass in the directory.
+Assem1/clean:
+
+.PHONY : Assem1/clean
+
+# Convenience name for "preinstall" pass in the directory.
+Assem1/preinstall:
+
+.PHONY : Assem1/preinstall
+
+#=============================================================================
 # Directory level rules for directory kartorm
 
 # Convenience name for "all" pass in the directory.

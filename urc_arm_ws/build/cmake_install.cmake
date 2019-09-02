@@ -119,6 +119,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/harshal/urc/urc_arm/urc_arm_ws/build/gtest/cmake_install.cmake")
   include("/home/harshal/urc/urc_arm/urc_arm_ws/build/armbot/cmake_install.cmake")
   include("/home/harshal/urc/urc_arm/urc_arm_ws/build/armbot_moveit_config/cmake_install.cmake")
+  include("/home/harshal/urc/urc_arm/urc_arm_ws/build/Assem1/cmake_install.cmake")
   include("/home/harshal/urc/urc_arm/urc_arm_ws/build/kartorm/cmake_install.cmake")
   include("/home/harshal/urc/urc_arm/urc_arm_ws/build/mrm_description/cmake_install.cmake")
 
