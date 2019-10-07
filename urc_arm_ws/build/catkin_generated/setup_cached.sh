@@ -8,8 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/harshal/urc/urc_arm/urc_arm_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/harshal/urc/urc_arm/urc_arm_ws/devel/lib:$LD_LIBRARY_PATH"
-export PATH="/home/harshal/rotorS_ws/devel/bin:/opt/ros/kinetic/bin:/home/harshal/bin:/home/harshal/.local/bin:/home/harshal/bin:/home/harshal/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda/bin:/snap/bin"
+export LD_LIBRARY_PATH="/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/lib:/home/harshal/urc/urc_arm/urc_arm_ws/devel/lib:/home/harshal/realsense_ws/devel/lib:/home/harshal/kalibr_ws/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/lib:/home/harshal/catkin_build_ws/install/lib/mavlink_sitl_gazebo/plugins:/home/harshal/catkin_build_ws/install/lib/mavlink_sitl_gazebo/plugins"
+export PATH="/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/bin:/home/harshal/kalibr_ws/devel/bin:/opt/ros/kinetic/bin:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/kinetic/share/euslisp/jskeus/eus//Linux64/bin:/home/harshal/gems/bin:/home/harshal/bin:/home/harshal/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PKG_CONFIG_PATH="/home/harshal/urc/urc_arm/urc_arm_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/harshal/urc/urc_arm/urc_arm_ws/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/harshal/urc/urc_arm/urc_arm_ws/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"

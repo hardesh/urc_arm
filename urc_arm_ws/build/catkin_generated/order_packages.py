@@ -2,4 +2,4 @@
 source_root_dir = "/home/harshal/urc/urc_arm/urc_arm_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/harshal/wanderbot_ws/devel;/home/harshal/rotorS_ws/devel;/home/harshal/learn_package/devel;/opt/ros/kinetic".split(';') if "/home/harshal/wanderbot_ws/devel;/home/harshal/rotorS_ws/devel;/home/harshal/learn_package/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/harshal/realsense_ws/devel;/home/harshal/kalibr_ws/devel;/opt/ros/kinetic".split(';') if "/home/harshal/realsense_ws/devel;/home/harshal/kalibr_ws/devel;/opt/ros/kinetic" != "" else []

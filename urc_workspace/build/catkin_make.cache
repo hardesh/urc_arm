@@ -1,0 +1,2 @@
+arm_spawn:nob_pkg
+-DCATKIN_DEVEL_PREFIX=/home/harshal/urc/urc_arm/urc_workspace/devel -DCMAKE_INSTALL_PREFIX=/home/harshal/urc/urc_arm/urc_workspace/install -G Unix Makefiles
