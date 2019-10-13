@@ -14,7 +14,6 @@ if __name__ == '__main__':
     pygame.init()
     pygame.display.set_mode((200,200))
 
-
     while not rospy.is_shutdown():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -30,5 +29,8 @@ if __name__ == '__main__':
                     key_pub.publish("i")
                 if event.key == pygame.K_DOWN:
                     key_pub.publish("k")
-        
+                if event.key == pygame.K_d:
+                    key_pub.publish("d")
+                if event.key == pygame.K_a:
+                    key_pub.publish("a")
         rate.sleep()

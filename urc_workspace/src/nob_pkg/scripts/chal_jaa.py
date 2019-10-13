@@ -19,6 +19,6 @@ def joy_sub_cb(joymsg):
 
 
 while not rospy.is_shutdown():
+    
     subtojoy = rospy.Subscriber('joy', Joy, joy_sub_cb)
-
     r.sleep()

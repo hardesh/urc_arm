@@ -5,11 +5,17 @@
 #include <std_msgs/String.h>
 #include <std_msgs/Float64.h>
 
+
 //#define SERIAL_DEBUG
 //#define DEBUG
 
 #define VMAX 10
 #define OMEGA_MAX 5
+#define SLOW_PWM 30
+
+int slow_pwm = SLOW_PWM;
+int Slow_down_f = 0;
+
 
 // For WiFi access point
 const char *ssid = "rover-esp";
@@ -65,6 +71,7 @@ void KeyboardCb_y(const std_msgs::Float64 &msgdata){
   Serial.println(y_axis); 
   #endif
 }
+
 
 // This should be done using a single subscriber
 ros::Subscriber<std_msgs::Float64> key_sub_x("chal_jaa_x", &KeyboardCb_x);
@@ -146,14 +153,14 @@ void loop()
     if (vel_wheels[0] > 0)
     {
       dirs[0] = LOW;
-//      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[0] = HIGH;
-//      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
     Serial.print("v0:");
@@ -164,14 +171,14 @@ void loop()
     if (vel_wheels[1] > 0)
     {
       dirs[1] = HIGH;
-//      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[1] = map(abs(vel_wheels[1]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[1] = map(abs(vel_wheels[1]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[1] = LOW;
-//      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[1] = map(abs(vel_wheels[1]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[1] = map(abs(vel_wheels[1]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
     Serial.print("v1:");
@@ -182,14 +189,14 @@ void loop()
     if (vel_wheels[2] > 0)
     {
       dirs[2] = HIGH;
-//      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[2] = map(abs(vel_wheels[2]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[2] = map(abs(vel_wheels[2]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[2] = LOW;
-//      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[2] = map(abs(vel_wheels[2]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[2] = map(abs(vel_wheels[2]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
     Serial.print("v2:");
@@ -200,14 +207,14 @@ void loop()
     if (vel_wheels[3] > 0)
     {
       dirs[3] = HIGH;
-//      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[3] = map(abs(vel_wheels[3]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[3] = map(abs(vel_wheels[3]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[3] = LOW;
-//      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[3] = map(abs(vel_wheels[3]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[3] = map(abs(vel_wheels[3]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
     Serial.print("v3:");
@@ -218,14 +225,14 @@ void loop()
     if (vel_wheels[4] > 0)
     {
       dirs[4] = HIGH;
-//      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[4] = map(abs(vel_wheels[4]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[4] = map(abs(vel_wheels[4]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[4] = LOW;
-//      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[4] = map(abs(vel_wheels[4]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[4] = map(abs(vel_wheels[4]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
     Serial.print("v4:");
@@ -236,25 +243,39 @@ void loop()
     if (vel_wheels[5] > 0)
     {
       dirs[5] = LOW;
-//      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[5] = map(abs(vel_wheels[5]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[5] = map(abs(vel_wheels[5]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[5] = HIGH;
-//      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
-      pwms[5] = map(abs(vel_wheels[5]), 0, (VMAX + OMEGA_MAX), 0, 100);
+      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      // pwms[5] = map(abs(vel_wheels[5]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
     Serial.print("v5:");
     Serial.println(dirs[5]);
     #endif
 
+
+    for (int i = 0; i < 6; i++){
+      
+      if ( pwms[i] < slow_pwm ){
+        pwms[i] = slow_pwm;
+        Slow_down_f = 1;
+      
+      }
+      
+      if (Slow_down_f == 1){
+        pwms[i] = slow_pwm;
+      }
+    }
+
+
     // Sending commands to motor
     for (int i = 0; i < 6; i++)
     {
       analogWrite(pwm_pins[i], pwms[i]);
-//      analogWrite(pwm_pins[i], 250);
 
       #ifdef SERIAL_DEBUG
       Serial.print("pwm0 is: ");
@@ -273,9 +294,20 @@ void loop()
       
       if (dirs[i] == 0) digitalWrite(dir_pins[i], LOW);
       else digitalWrite(dir_pins[i], HIGH);
+
+      if (Slow_down_f == 1 && slow_pwm > 0){
+        slow_pwm = slow_pwm - 5;
+      }
+      else
+      {
+        slow_pwm = SLOW_PWM;
+        Slow_down_f = 0;
+      }
+      
+
     }
-    
-    
+
+
   } else {
     
     #ifdef SERIAL_DEBUG
@@ -284,5 +316,5 @@ void loop()
   }
   nh.spinOnce();
   
-  delay(30);
+  delay(20);
 }
