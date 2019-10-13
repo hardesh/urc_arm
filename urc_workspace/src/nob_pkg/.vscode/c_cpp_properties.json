@@ -1,0 +1,52 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/harshal/realsense_ws/devel/include/**",
+        "/home/harshal/kalibr_ws/devel/include/**",
+        "/opt/ros/kinetic/include/**",
+        "/home/harshal/urc/urc_arm/urc_workspace/src/arm_spawn/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_optimizer/aslam_backend/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_optimizer/aslam_backend_expressions/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_optimizer/aslam_backend_python/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_cameras/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_cameras_april/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_cv_backend/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_cv_backend_python/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_cv_error_terms/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_cv_python/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_cv_serialization/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_imgproc/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_nonparametric_estimation/aslam_splines/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_cv/aslam_time/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_nonparametric_estimation/bsplines/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_offline_calibration/ethz_apriltag2/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_incremental_calibration/incremental_calibration/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_incremental_calibration/incremental_calibration_python/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_offline_calibration/kalibr/include/**",
+        "/home/harshal/urc/urc_arm/urc_workspace/src/nob_pkg/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/numpy_eigen/include/**",
+        "/home/harshal/realsense_ws/src/realsense-ros/realsense2_camera/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_boost/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_common/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_eigen/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_kinematics/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_logging/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_matrix_archive/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_opencv/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_property_tree/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_python/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_random/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/Schweizer-Messer/sm_timing/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/aslam_optimizer/sparse_block_matrix/include/**",
+        "/home/harshal/kalibr_ws/src/Kalibr/suitesparse/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}

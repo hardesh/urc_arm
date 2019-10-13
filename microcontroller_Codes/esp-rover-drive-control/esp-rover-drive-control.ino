@@ -153,13 +153,13 @@ void loop()
     if (vel_wheels[0] > 0)
     {
       dirs[0] = LOW;
-      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[0] = HIGH;
-      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[0] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
@@ -171,13 +171,13 @@ void loop()
     if (vel_wheels[1] > 0)
     {
       dirs[1] = HIGH;
-      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[1] = map(abs(vel_wheels[1]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[1] = LOW;
-      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[1] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[1] = map(abs(vel_wheels[1]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
@@ -189,13 +189,13 @@ void loop()
     if (vel_wheels[2] > 0)
     {
       dirs[2] = HIGH;
-      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[2] = map(abs(vel_wheels[2]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[2] = LOW;
-      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[2] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[2] = map(abs(vel_wheels[2]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
@@ -207,13 +207,13 @@ void loop()
     if (vel_wheels[3] > 0)
     {
       dirs[3] = HIGH;
-      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[3] = map(abs(vel_wheels[3]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[3] = LOW;
-      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[3] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[3] = map(abs(vel_wheels[3]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
@@ -225,13 +225,13 @@ void loop()
     if (vel_wheels[4] > 0)
     {
       dirs[4] = HIGH;
-      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[4] = map(abs(vel_wheels[4]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[4] = LOW;
-      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[4] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[4] = map(abs(vel_wheels[4]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
@@ -243,34 +243,19 @@ void loop()
     if (vel_wheels[5] > 0)
     {
       dirs[5] = LOW;
-      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[5] = map(abs(vel_wheels[5]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     else
     {
       dirs[5] = HIGH;
-      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 230);
+      pwms[5] = map(abs(vel_wheels[0]), 0, (VMAX + OMEGA_MAX), 0, 150);
       // pwms[5] = map(abs(vel_wheels[5]), 0, (VMAX + OMEGA_MAX), 0, 100);
     }
     #ifdef SERIAL_DEBUG
     Serial.print("v5:");
     Serial.println(dirs[5]);
     #endif
-
-
-    for (int i = 0; i < 6; i++){
-      
-      if ( pwms[i] < slow_pwm ){
-        pwms[i] = slow_pwm;
-        Slow_down_f = 1;
-      
-      }
-      
-      if (Slow_down_f == 1){
-        pwms[i] = slow_pwm;
-      }
-    }
-
 
     // Sending commands to motor
     for (int i = 0; i < 6; i++)
@@ -294,16 +279,6 @@ void loop()
       
       if (dirs[i] == 0) digitalWrite(dir_pins[i], LOW);
       else digitalWrite(dir_pins[i], HIGH);
-
-      if (Slow_down_f == 1 && slow_pwm > 0){
-        slow_pwm = slow_pwm - 5;
-      }
-      else
-      {
-        slow_pwm = SLOW_PWM;
-        Slow_down_f = 0;
-      }
-      
 
     }
 
