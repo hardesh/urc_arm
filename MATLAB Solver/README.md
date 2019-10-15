@@ -5,4 +5,7 @@ The folder Arm contains the codes used for finding the link lenghts.
 arm_link_solve has some issues that need to be solved in order to use
 
 
-base is attached at 50cm, link lenghts - (50cm,40cm), gripper-27cm
+base is attached at 50cm, link lenghts - (50cm,40cm), gripper-27cm  
+
+
+![](https://raw.githubusercontent.com/hardesh/urc_arm/tree/master/MATLAB%20Solver/workspace.png "wrk_spc")
