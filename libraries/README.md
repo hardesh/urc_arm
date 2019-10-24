@@ -1,1 +1,3 @@
-### This folder contains all the libraries made for the robot arm. 
+### Libraries:
+
+Solvers - Contains forward kinematics solver and inverse kinematics solver

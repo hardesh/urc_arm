@@ -25,7 +25,7 @@ params_new = zeros(1,2);
 
 count = 0;
 for l1 = 0.5:0.03:0.65
-    count = count + 1
+    count = count + 1;
     
     if count < 4
         l2 = l2 + 0.02;
@@ -64,12 +64,14 @@ for l1 = 0.5:0.03:0.65
                     %joint_3_y = joint_2_y + l3 * sin(q1_rad+q2_rad+q3_rad);
                     
                     plot([0 joint_1_x],[0 joint_1_y],'b');
+                    hold on;
                     plot([joint_2_x joint_1_x],[joint_2_y joint_1_y],'b');
+                    hold on;
                     %plot([joint_2_x joint_3_x],[joint_2_y joint_3_y],'b');
                     
                     params_new = [l1 l2];
-                    ee_x
-                    ee_y
+                    ee_x;
+                    ee_y;
 
                     params = cat(1,params,params_new);
                 
@@ -83,6 +85,6 @@ for l1 = 0.5:0.03:0.65
     
 end
 
-params
+params;
 
 
