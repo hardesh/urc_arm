@@ -1,11 +1,10 @@
-
-import tinyik
+#!/usr/bin/env python
 import numpy as np
 
+from solvers import *
 
-arm = tinyik.Actuator(['z', [0.5, 0.0, 0.0], 'z', [0.4, 0.0, 0.0],'z', [0.27,0.0,0.0]])
-print(arm.ee)
-# for complete expansion
-arm.ee = [0.6,0.,0.0]
-angles1 =  np.round(np.rad2deg(arm.angles))
-print(angles1)
+my_fk = fk([50,40,30],[0,np.pi/2,-np.pi/2])
+
+# temp = my_fk.forward_kinematics()
+temp = my_fk.get_pos()
+print(temp)
