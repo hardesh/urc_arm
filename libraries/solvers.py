@@ -19,7 +19,11 @@ class fk():
     The assumptions are taken according to the D-H parameters. 
     """
     def __init__(self,lengths, angles):
-
+        """
+        Params:
+        1) lengths: list of link links
+        2) angles: these are the initial angles of the arm
+        """
         if len(lengths) != len(angles):
             print("Invalid Arguments Passed to fk object!")
             sys.exit()
@@ -39,6 +43,11 @@ class fk():
         print("FK class initialized")
 
     def forward_kinematics(self):
+        """
+        Uses sympy matrix as the base matrices. 
+        
+        returns numpy matrix of the transformation of end effector
+        """
         temp_T = Matrix.eye(3)
         for i in range(len(self.lengths)):
             angle_mat = self.T_a.subs(self.q,self.angles[i]).evalf()

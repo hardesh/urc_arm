@@ -20,3 +20,6 @@ i = 3 is gripper.
 Angles q1 and q2 are constrained due to the linear actuator. 
 
 ![](https://raw.githubusercontent.com/hardesh/urc_arm/master/MATLAB%20Solver/workspace.png "wrk_spc")
+
+
+### The scripts were tested on MATLAB-19b
