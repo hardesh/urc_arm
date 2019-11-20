@@ -1,8 +1,0 @@
-prefix=/home/harshal/urc/urc_arm/urc_workspace/devel
-
-Name: nob_pkg
-Description: Description of nob_pkg
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/harshal/urc/urc_arm/urc_workspace/devel/lib 
-Requires: 
