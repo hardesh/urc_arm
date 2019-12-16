@@ -22,3 +22,11 @@ Example:
 >>> my_ik = ik([50,40,30],ee_coords)
 >>> my_ik.inv_kin()
 ```
+
+
+Joystick Inputs and their use:
+- Left Joystick (Movement in X-Y plane)
+- Right Joystick (Movement of the base motor)  
+- Up-Down-Left-Right Button (Movement in Z direction)
+- LB and RB for gripper rotation
+- X to close gripper and B to open the gripper
