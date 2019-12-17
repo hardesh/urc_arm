@@ -10,15 +10,17 @@
 #define POT1 A3
 #define POT2 A4
 
-//1 is for 6 inch linear actuator, 2 is the 4 inch linear actuator, 3 is for the base rotator
-//DIR1, PWM1, DIR2, PWM2, DIR3, PWM3
-int pin[6] = {7,13,6,12,5,11};
+//1 is 6 inch linear actuator, 2 is 4 inch linear actuator, 3 is base rotator, 4 is bevel gear right, 5 is bevel gear left
+//6 is for stepper motor
+//DIR1, PWM1, DIR2, PWM2, DIR3, PWM3, DIR4, PWM4,DIR5, PWM5,DIR6,STEP
+int pin[12] = {7,13,6,12,5,11,4,10,3,9,2,8};
 //pot is the potentiometer reading. l is the stoke length(extension only). vel is the stoke velocity
 float pot1,l1,vel1;
 float pot2,l2,vel2;
-float vel3;
+float vel3,vel4,vel5;
 //x,y is the stoke length that has to be reached. we get it from the final_ext topic. k is the right joystick input for the base rotation
 float x,y,k;
+int lb=0,rb=0,xb=0,bb=0;
 
 void update_act(){
   //for linear actuator 1(6 inch)
@@ -56,7 +58,38 @@ void update_act(){
   }
   else{
     vel3 = 0;
-  } 
+  }
+  //for bevel gear rotation
+  if(lb==1){
+     digitalWrite(pin[6],HIGH);
+     digitalWrite(pin[8],HIGH);
+  }
+  else if(rb==1){
+     digitalWrite(pin[6],LOW);
+     digitalWrite(pin[8],LOW);
+  }
+  if(rb==1||lb==1){
+    vel4=255;
+    vel5=255;
+  }
+  else{
+    vel4=0;
+    vel5=0;
+  }
+  //For gripper movement. The stepper motor moves one step for each pulse given to the step pin.
+  if(xb==1){
+    digitalWrite(pin[10],HIGH);
+  }
+  else if(bb=1){
+    digitalWrite(pin[10],LOW);
+  }
+  if(xb==1||bb==1){
+    digitalWrite(pin[11],HIGH);
+    delayMicroseconds(500);
+    digitalWrite(pin[11],LOW);
+    delayMicroseconds(500);
+  }
+  
 }
 
 void act_callback(const geometry_msgs::Point& msg){
@@ -64,15 +97,19 @@ void act_callback(const geometry_msgs::Point& msg){
   y = msg.y;
 }
 
-void rot_callback(const sensor_msgs::Joy& msg)
+void joystick_callback(const sensor_msgs::Joy& msg)
 {
   k = msg.axes[3];
+  lb = msg.buttons[4];
+  rb = msg.buttons[5];
+  xb = msg.buttons[2];
+  bb = msg.buttons[1];
 }
 
 ros::NodeHandle n;
 geometry_msgs::Point c_ext;
 ros::Subscriber<geometry_msgs::Point>sub1("final_ext", act_callback);
-ros::Subscriber<sensor_msgs::Joy> sub2("joy", rot_callback);
+ros::Subscriber<sensor_msgs::Joy> sub2("joy", joystick_callback);
 ros::Publisher pub1("current_ext", &c_ext);
 
 //coustum map fuction, as the default uses only integers
@@ -104,6 +141,8 @@ void loop(){
   analogWrite(pin[1],vel1);
   analogWrite(pin[3],vel2);
   analogWrite(pin[5],vel3);
+  analogWrite(pin[7],vel4);
+  analogWrite(pin[9],vel5);
   
   n.spinOnce();
 }
