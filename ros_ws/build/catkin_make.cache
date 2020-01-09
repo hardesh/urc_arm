@@ -1,0 +1,2 @@
+temp
+-DCATKIN_DEVEL_PREFIX=/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/install -G Unix Makefiles
