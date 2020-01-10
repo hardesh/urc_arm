@@ -1,0 +1,8 @@
+prefix=/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/install
+
+Name: temp
+Description: Description of temp
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/install/lib 
+Requires: 
