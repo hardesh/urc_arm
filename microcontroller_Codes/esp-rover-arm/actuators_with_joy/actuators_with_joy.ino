@@ -1,3 +1,5 @@
+//retraction on postive
+
 #include <ros.h>
 #include <sensor_msgs/Joy.h>
 #include <std_msgs/String.h>
@@ -24,7 +26,7 @@ void callback(const sensor_msgs::Joy& msg)
     vel1 = 0;
   }
   
-  float y = msg.axes[7];
+  float y = msg.axes[4];
   if(y>0.8){
     digitalWrite(DIR2,LOW);
     vel2 = 255;

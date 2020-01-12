@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/src
+CMAKE_SOURCE_DIR = /home/rajathshetty20/Desktop/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build
+CMAKE_BINARY_DIR = /home/rajathshetty20/Desktop/ros_ws/build
 
 # Utility rule file for sensor_msgs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build: sensor_msgs_generat
 .PHONY : temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 
 temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
-	cd /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build/temp && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/rajathshetty20/Desktop/ros_ws/build/temp && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 
 temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend:
-	cd /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/src /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/src/temp /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build/temp /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build/temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rajathshetty20/Desktop/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rajathshetty20/Desktop/ros_ws/src /home/rajathshetty20/Desktop/ros_ws/src/temp /home/rajathshetty20/Desktop/ros_ws/build /home/rajathshetty20/Desktop/ros_ws/build/temp /home/rajathshetty20/Desktop/ros_ws/build/temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : temp/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
 

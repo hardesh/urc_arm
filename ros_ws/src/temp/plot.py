@@ -19,7 +19,6 @@ rospy.Subscriber("plot1", Point, callback1)
     
 a1 = 293.39 * (10**-3)
 a2 = 240.49 * (10**-3)
-a3 = 0
 
 #initial joint angles
 q1 = 0
@@ -38,8 +37,8 @@ def animate(i):
 
     ax1.plot([0,x1],[0,y1])
     ax1.plot([x1,x2],[y1,y2])
-    plt.xlim([-a1-a2-a3,a1+a2+a3])
-    plt.ylim([-a1-a2-a3,a1+a2+a3])
+    plt.xlim([-a1-a2,a1+a2])
+    plt.ylim([-a1-a2,a1+a2])
     ax1.grid()
     
 ani = animation.FuncAnimation(fig, animate, interval=100)    

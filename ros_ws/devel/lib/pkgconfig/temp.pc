@@ -1,8 +1,8 @@
-prefix=/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/devel
+prefix=/home/rajathshetty20/Desktop/ros_ws/devel
 
 Name: temp
 Description: Description of temp
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/devel/lib 
+Libs: -L/home/rajathshetty20/Desktop/ros_ws/devel/lib 
 Requires: 
