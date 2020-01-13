@@ -57,7 +57,7 @@ class Kin():
                                                           math.sin(self.q2))/(self.l1+self.l2*math.cos(self.q2)))
             
             x,y = self.forward_kinematics()
-            if (x < 0 and y < 0):
+            if (x < 0 or self.q1 < 0):
                 self.q1 = self.q1_prev
                 self.q2 = self.q2_prev
                 self.x, self.y = self.forward_kinematics()
