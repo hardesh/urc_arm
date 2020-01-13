@@ -1,8 +1,8 @@
-# Install script for directory: /home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/src/temp
+# Install script for directory: /home/rajathshetty20/Desktop/ros_ws/src/temp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/rajathshetty20/Desktop/ros_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build/temp/catkin_generated/installspace/temp.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/rajathshetty20/Desktop/ros_ws/build/temp/catkin_generated/installspace/temp.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/temp/cmake" TYPE FILE FILES
-    "/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build/temp/catkin_generated/installspace/tempConfig.cmake"
-    "/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/build/temp/catkin_generated/installspace/tempConfig-version.cmake"
+    "/home/rajathshetty20/Desktop/ros_ws/build/temp/catkin_generated/installspace/tempConfig.cmake"
+    "/home/rajathshetty20/Desktop/ros_ws/build/temp/catkin_generated/installspace/tempConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/temp" TYPE FILE FILES "/home/rajathshetty20/Desktop/kratos/urc_arm/ros_ws/src/temp/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/temp" TYPE FILE FILES "/home/rajathshetty20/Desktop/ros_ws/src/temp/package.xml")
 endif()
 
