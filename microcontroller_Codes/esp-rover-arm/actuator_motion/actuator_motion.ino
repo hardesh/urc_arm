@@ -24,24 +24,24 @@ int lb=0,rb=0,xb=0,bb=0;
 
 void update_act(){
   //for linear actuator 1(6 inch)
-  if(l1 > x+0.1){
-    digitalWrite(pin[0],LOW);
+  if(l1 > x+0.15){
+    digitalWrite(pin[0],HIGH);
     vel1 = 255;
   }
-  else if(l1 < x-0.1){
-    digitalWrite(pin[0],HIGH);
+  else if(l1 < x-0.15){
+    digitalWrite(pin[0],LOW);
     vel1 = 255;
   }
   else{
     vel1 = 0;
   }
   //for linear actuator 2(4 inch)
-  if(l2 > y+0.1){
-    digitalWrite(pin[2],LOW);
+  if(l2 > y+0.15){
+    digitalWrite(pin[2],HIGH);
     vel2 = 255;
   }
-  else if(l2 < y-0.1){
-    digitalWrite(pin[2],HIGH);
+  else if(l2 < y-0.15){
+    digitalWrite(pin[2],LOW);
     vel2 = 255;
   }
   else{
@@ -130,15 +130,15 @@ void setup(){
 
 void loop(){
   pot1 = analogRead(POT1);
-  l1 = mymap(pot1,1,720,0,6);
+  l1 = mymap(pot1,0,720,0,6);
   pot2 = analogRead(POT2);
-  l2 = mymap(pot2,45,538,0,4);
+  l2 = mymap(pot2,0,720,0,2.5);
   c_ext.x = l1;
   c_ext.y = l2;
 
   pub1.publish(&c_ext);
  
-  if(pot2 > 360 && pin[2]==HIGH){
+  if(pot2 > 400 && pin[2]==HIGH){
     vel2 = 0;
   }
   
