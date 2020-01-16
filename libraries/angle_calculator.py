@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import numpy as np
-# import sympy
+import sympy
 import pandas as pd
 
 import time
@@ -8,7 +8,7 @@ import time
 from solvers import *
 
 start = time.time()
-# my_fk = fk([50,40,30],[np.pi/3,-np.pi/3,-np.pi/6])
+my_fk = fk([50,40,30],[np.pi/3,-np.pi/3,-np.pi/6])
 
 # temp = my_fk.forward_kinematics()
 # temp = my_fk.get_pos()
@@ -17,15 +17,15 @@ start = time.time()
 
 # print("diff",done-start)
 
-# q1 = sympy.Symbol("q1")
-# q2 = sympy.Symbol("q2")
+q1 = sympy.Symbol("q1")
+q2 = sympy.Symbol("q2")
 
-# new_fk = fk([50,40,30],[q1,q2,0])
-# temp = new_fk.get_sym_matrix()
-
+new_fk = fk([50,40,30],[q1,q2,0])
+temp = new_fk.get_sym_matrix()
 
 # new_temp = sympy.solve([temp[2]-80,temp[5]-40],dict=True)
-# print(new_temp)
+print(sympy.simplify(temp[2]))
+
 
 list_ee = [[60,-50],[60,-30],[60,30],[60,40],\
     [60,50],[70,-50],[70,20],[70,30],[70,40],[70,50],\
@@ -49,6 +49,6 @@ for i in range(len(list_ee)):
     dataframe_dict["ee_pos"].append(list_ee[i])
 
 dataframe = pd.DataFrame(data=dataframe_dict)
-print(dataframe)
-print(dataframe.max())
-print(dataframe.min())
+# print(dataframe)
+# print(dataframe.max())
+# print(dataframe.min())
