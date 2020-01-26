@@ -20,13 +20,13 @@ params = zeros(1,2);
 params_new = zeros(1,2);
 
 count = 0;
-l2 = 0.36;
+l2 = 0.30;
 
-for l1 = 0.46:0.02:0.50
-    count = count + 1
+for l1 = 0.40:0.01:0.50
+    count = count + 1;
     
-    if count < 2
-        l2 = l2 + 0.015;
+    if count < 1
+        l2 = l2 + 0.012;
         %l3 = l3 + 0.01;
         continue
     end
@@ -49,7 +49,7 @@ for l1 = 0.46:0.02:0.50
                 plot(ee_x,ee_y,'ro','MarkerSize',4);  %plotting every point
                 grid on
                 hold on
-                if ee_x > 0.3 && ee_y > 0.8   %condition for checking the end effector
+                if ee_x > 0.3 && ee_y > 0.5   %condition for checking the end effector
                    
                     plot(ee_x,ee_y,'b*','MarkerSize',6);
                     
@@ -65,8 +65,8 @@ for l1 = 0.46:0.02:0.50
                     %plot([joint_2_x joint_3_x],[joint_2_y joint_3_y],'b');
                     
                     params_new = [l1 l2];
-                    ee_x
-                    ee_y
+                    ee_x;
+                    ee_y;
 
                     params = cat(1,params,params_new);
                 

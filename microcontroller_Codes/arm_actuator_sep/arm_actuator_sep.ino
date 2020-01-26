@@ -34,7 +34,10 @@ const int right_bevel_pwm = 255;
 
 const int base_rot_pwm = 4;
 const int base_rot_dir = 28;
-const int bev_delay = 50;
+const int bev_delay = 30;
+
+const int rack_a_pin_pwm = 10;
+const int rack_a_pin_dir = 30;
 
 std_msgs::String mah_str;
 ros::Publisher pub2("func", &mah_str);
@@ -42,14 +45,23 @@ ros::Publisher pub2("func", &mah_str);
 void baseRotCw()
 { // home
   digitalWrite(base_rot_dir, HIGH);
-  analogWrite(base_rot_pwm, 250);
+  analogWrite(base_rot_pwm, 200);
+
+  delay(100);
+  analogWrite(base_rot_pwm, 0);
+  mah_str.data = "baserotcw";
+  
   pub2.publish(&mah_str);
 }
 
 void baseRotACw()
 { // start
   digitalWrite(base_rot_dir, LOW);
-  analogWrite(base_rot_pwm, 250);
+  analogWrite(base_rot_pwm, 200);
+
+  delay(100);
+  analogWrite(base_rot_pwm, 0);
+  mah_str.data = "baserotacw";
   pub2.publish(&mah_str);
 }
 
@@ -198,11 +210,40 @@ void joy_callback(const sensor_msgs::Joy &msg)
   }
 }
 
+String key;
+
+void rap_callback(const std_msgs::String &msg){
+  key = msg.data;
+  
+  if(key == "i"){
+    digitalWrite(rack_a_pin_dir, HIGH);
+    analogWrite(rack_a_pin_pwm, 200);
+    delay(100);
+
+    analogWrite(rack_a_pin_pwm, 0);
+    mah_str.data = "i pressed";
+    pub2.publish(&mah_str);
+  }
+  else if (key == "k"){
+    digitalWrite(rack_a_pin_dir, LOW);
+    analogWrite(rack_a_pin_pwm, 200);
+    delay(100);
+
+    analogWrite(rack_a_pin_pwm, 0);
+    mah_str.data = "k pressed";
+    pub2.publish(&mah_str);
+  }
+}
+
+
 ros::NodeHandle n;
 geometry_msgs::Point c_ext;
 
 ros::Subscriber<sensor_msgs::Joy> sub2("joy", joy_callback);
 ros::Publisher pub1("current_ext", &c_ext);
+
+ros::Subscriber<std_msgs::String> r_a_p("keys", rap_callback);
+
 
 //coustum map fuction, as the default uses only integers
 float mymap(float a, float b, float c, float d, float e)
@@ -235,6 +276,7 @@ void setup()
   n.advertise(pub2);
 
   n.subscribe(sub2);
+  n.subscribe(r_a_p);
 }
 
 void loop()
